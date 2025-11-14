@@ -1,0 +1,9 @@
+variable "name" { type = string }
+variable "private_subnet_ids" { type = list(string) }
+variable "ami_id" { type = string }
+variable "instance_type" { type = string }
+variable "desired" { type = number }
+variable "min" { type = number }
+variable "max" { type = number }
+variable "target_group_arn" { type = string }
+variable "vpc_id" { type = string }
