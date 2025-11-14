@@ -1,4 +1,4 @@
-variable "name" {}
+
 resource "aws_vpc" "this" {
 cidr_block = var.vpc_cidr
 enable_dns_hostnames = true
@@ -80,12 +80,3 @@ route_table_id = aws_route_table.private.id
 }
 
 
-output "vpc_id" {
-     value = aws_vpc.this.id 
-     }
-output "public_subnet_ids" { 
-    value = [for s in aws_subnet.public: s.id] 
-    }
-output "private_subnet_ids" { 
-    value = [for s in aws_subnet.private: s.id] 
-    }

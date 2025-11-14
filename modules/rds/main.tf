@@ -1,8 +1,4 @@
-variable "name" {}
-variable "private_subnet_ids" { type = list(string) }
-variable "vpc_id" { type = string }
-variable "db_username" { type = string }
-variable "db_password" { type = string }
+
 
 
 resource "aws_db_subnet_group" "db_subnet" {
@@ -25,6 +21,3 @@ publicly_accessible = false
 skip_final_snapshot = true
 }
 
-
-output "db_endpoint" { value = aws_db_instance.db.endpoint }
-output "db_identifier" { value = aws_db_instance.db.id }

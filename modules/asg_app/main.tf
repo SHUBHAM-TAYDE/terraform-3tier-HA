@@ -1,9 +1,3 @@
-variable "name" {}
-variable "min" { default = 1 }
-variable "max" { default = 2 }
-variable "target_group_arn" {}
-variable "vpc_id" {}
-
 
 resource "aws_iam_role" "ec2_role" {
 name = "${var.name}-ec2-role"
@@ -68,6 +62,3 @@ value = "${var.name}-instance"
 propagate_at_launch = true
 }
 }
-
-
-output "asg_name" { value = aws_autoscaling_group.asg.name }
