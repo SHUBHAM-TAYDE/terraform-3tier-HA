@@ -31,3 +31,22 @@ terraform-3tier-ha-repo/
 │ ├── variables.tf
 │ └── outputs.tf
 └── README.md
+
+
+# Terraform 3-Tier High Availability Architecture
+
+This document explains how to deploy the Dev environment using Terraform with an AWS S3 backend.
+
+---
+
+## Step 1: Prepare AWS Backend (S3 + DynamoDB)
+
+If you already created the S3 bucket using the `global/` code, skip this step.
+
+Otherwise run this once:
+
+```bash
+cd global
+terraform init
+terraform apply -var="bucket_name=<your-unique-bucket-name>"
+```
