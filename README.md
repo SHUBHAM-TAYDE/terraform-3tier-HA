@@ -21,3 +21,24 @@ This will create:
 S3 bucket for Terraform state
 
 DynamoDB table (optional) for state locking
+
+
+## Step 2: Update Backend for Dev Environment
+
+Edit the file:
+
+```bash
+envs/dev/backend.tf
+```
+Replace:
+
+```bash
+<YOUR_TFSTATE_BUCKET>
+```
+with your actual bucket name.
+
+Example
+
+```bash
+bucket = "shubham-tfstate-bucket"
+```
